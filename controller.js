@@ -1,13 +1,25 @@
-const neighborhoodsService = require('./service');
+const neighborhoodsServiceFind = require('./serviceFindAll');
+const neighborhoodsServiceFAdd = require('./serviceAddAll');
+
+async function addNeighborhoods(req, res){
+    try {
+        await neighborhoodsServiceFAdd.uploadToMongo();
+    } catch (err){
+        console.log(`[getScoredNeighborhoods] Failed: ${err.message}`);
+        return res.status(500);
+    }
+}
+
+// addNeighborhoods();
 
 async function getScoredNeighborhoods(req, res){
     try {
-        const neighborhoods = await neighborhoodsService.getAll();
+        const neighborhoods = await neighborhoodsServiceFind.getAll();
         
         if (neighborhoods.length > 0){
             const neighborhoodParamsScore = calcScore(neighborhoods);
             console.log(neighborhoodParamsScore);
-            const neighborhoodPriorityList = neighborhoodParamsScore.map(elem => calcPriority(elem));// === const n2 = n.map(calcPriority)
+            const neighborhoodPriorityList = neighborhoodParamsScore.map(elem => calcPriority(elem));
             let theWinner = chooseWinner(neighborhoodPriorityList);
             console.log("The next neighborhood- " + theWinner.neighborhoodName + " with priority " + theWinner.priority);
 
@@ -22,7 +34,7 @@ async function getScoredNeighborhoods(req, res){
 }
 getScoredNeighborhoods();
 
-function calcScore(neighborhoods, parameters){
+function calcScore(neighborhoods, parameters){//scores 9-50
     return neighborhoods.map( neighborhood => {
         return {
             neighborhoodName: neighborhood.neighborhood,        

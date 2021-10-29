@@ -1,0 +1,5 @@
+{
+    "MONGO_USER" : "Merav",
+    "MONGO_PASSWORD" : "dbPass",
+    "MONGO_CLUSTER_NAME" : "cluster0.01myv"
+}
