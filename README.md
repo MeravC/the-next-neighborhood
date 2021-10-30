@@ -58,18 +58,92 @@ rules, data-sources, computation models etc.
 Clone this repo and run
 
 ```
-$ npm init
+$ npm install
 ```
 
 
 ## Usage
 
 ```
-$ node analyze-neighborhoods
+$ node controller.js
 ```
 
 outputs
 
 ```
-Try it out and see for yourself ;)
+[
+  {
+    neighborhoodName: 'Shawnee',
+    scoreAge: 8,
+    scoreDisFromCenter: 4,
+    scoreIncome: 2,
+    scoreAvailabilityOfPublicTrans: 2,
+    scorePopulationDensity: 1
+  },
+  {
+    neighborhoodName: 'Pawtuckett',
+    scoreAge: 9,
+    scoreDisFromCenter: 2,
+    scoreIncome: 10,
+    scoreAvailabilityOfPublicTrans: 2,
+    scorePopulationDensity: 1
+  },
+  {
+    neighborhoodName: 'Jordan',
+    scoreAge: 6,
+    scoreDisFromCenter: 8,
+    scoreIncome: 4,
+    scoreAvailabilityOfPublicTrans: 10,
+    scorePopulationDensity: 2
+  },
+  {
+    neighborhoodName: 'Dorchester',
+    scoreAge: 5,
+    scoreDisFromCenter: 10,
+    scoreIncome: 10,
+    scoreAvailabilityOfPublicTrans: 2,
+    scorePopulationDensity: 1
+  },
+  {
+    neighborhoodName: 'Avondale',
+    scoreAge: 4,
+    scoreDisFromCenter: 10,
+    scoreIncome: 6,
+    scoreAvailabilityOfPublicTrans: 2,
+    scorePopulationDensity: 10
+  },
+  {
+    neighborhoodName: 'Deanwood',
+    scoreAge: 7,
+    scoreDisFromCenter: 10,
+    scoreIncome: 6,
+    scoreAvailabilityOfPublicTrans: 10,
+    scorePopulationDensity: 5
+  },
+  {
+    neighborhoodName: 'Washington Park',
+    scoreAge: 8,
+    scoreDisFromCenter: 10,
+    scoreIncome: 2,
+    scoreAvailabilityOfPublicTrans: 2,
+    scorePopulationDensity: 1
+  },
+  {
+    neighborhoodName: 'Southwest Germantown',
+    scoreAge: 10,
+    scoreDisFromCenter: 10,
+    scoreIncome: 10,
+    scoreAvailabilityOfPublicTrans: 10,
+    scorePopulationDensity: 10
+  },
+  {
+    neighborhoodName: 'Point Breeze',
+    scoreAge: 4,
+    scoreDisFromCenter: 0,
+    scoreIncome: 2,
+    scoreAvailabilityOfPublicTrans: 2,
+    scorePopulationDensity: 1
+  }
+]
+The next neighborhood- Southwest Germantown with priority 50
 ```
